@@ -1,20 +1,38 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-html,body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-  overflow-x:hidden;
+:root{
+    --bgcdark:#142d4c;
+    --bgclight:#9fd3c7;
+}
+
+html{
+    overflow-x:hidden;
+    width:100vw;
+    top:0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bgcdark);
+    overflow-x:hidden;
+    width:100vw;
+    height:100%;
+    top:0;
 }
 
 .bothwrap{
     display: flex;
+    overflow:hidden;
+    width:100%;
 }
 
 .pgwrapper{
     position: absolute;
+    right:0;
     width:100vw;
-    float:left;
-    background-color: darkslategrey;
+    left:0;
+    right:0;
+    background-color: var(--bgclight);
     z-index:0;
     transition-duration: 0.5s;
     min-height:100vh;
@@ -25,9 +43,8 @@ html,body {
     position: absolute;
     left:100vw;
     width:100vw;
-    float:left;
     z-index:0;
-    background:#031925;
+    background:var(--bgcdark);
     overflow:hidden;
     transition-duration: 0.5s;
     min-height:100vh;

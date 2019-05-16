@@ -1,3 +1,8 @@
+:root{
+    --bgcdark:#142d4c;
+    --bgclight:#9fd3c7;
+}
+
 .nbwrappr{
     display:block;
     position:fixed;
@@ -17,11 +22,9 @@
 }
 
 .topbar.scroll{
-    background:rgba(45,66,98,0.5);
+    background:rgba(29, 50, 68, 0.2);
     transition-duration:0.5s;
-    box-shadow:0px 5px 15px 5px rgba(45,66,98,0.5);
 }
-
 button.topbarbtn{
     float:right;
     position:relative;
@@ -55,7 +58,7 @@ button.topbarbtn.active{
 }
 
 .tbtxt{
-    background: linear-gradient(to bottom right,#5bc8ac,#f18d9e);
+    background: linear-gradient(to bottom right,darkviolet,#f18d9e);
     -webkit-background-clip: text;
     background-clip: text;
     color:transparent;
@@ -86,7 +89,7 @@ button.topbarbtn.active{
     height:80px;
     width:80px;
     border-radius: 40px;
-    background-color: #031925;
+    background-color: var(--bgcdark);
     z-index:2;
 }
 
@@ -111,7 +114,7 @@ button.topbarbtn.active{
 }
 
 .nxtanimate.changed .nxtbttn{
-    background: darkslategray;
+    background: var(--bgclight);
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.9);
 }
 
@@ -166,14 +169,14 @@ div.animatewrapper{
 
 div.sidebarwrapper{
     position:relative;
-    min-height:80px;
+    min-height:10vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
     padding:0;
-    background-color: #031925;
+    background-color: var(--bgcdark);
 }
 
 div.sidebarwrapper.changed{
-    background-color: darkslategray;
+    background-color: var(--bgclight);
 }
 
 /*col-lg-12 section*/
@@ -193,16 +196,21 @@ div.col-lg-12{
 /*sidebarbtn and its children*/
 button.sidebarbtn{
     width:100%;
-    padding-top:16px;
-    padding-bottom:16px;
+    height:10vh;
     font-weight:bolder;
     background-color: inherit;
 }
 
-.sidebarbtn .text{
+.sidebarbtn .sidebartext{
     float:left;
     padding-left:20px;
     font-size:2em;
+    background: linear-gradient(to bottom right,#603F83, #C7D3D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+    margin:0;
+    padding:0;
 }
 
 .sidebarbtn .arrowicon{
@@ -230,7 +238,7 @@ button.sidebaraction{
 }
 
 button.sidebaraction:hover{
-    background-color:#031925;
+    background-color:var(--bgcdark);
     transform: scale(1.01,1.01);
 }
 
@@ -269,13 +277,13 @@ button.sidebaraction:hover{
 .wrapper{
     position:relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
-    background:#031925;
+    background:var(--bgcdark);
     transition-duration: 0.2s;
     overflow:hidden;
 }
 
 .pgwrapper2 .wrapper{
-    background-color:darkslategray;
+    background-color:var(--bgclight);
 }
 
 .wrapper .num{
@@ -299,6 +307,16 @@ button.sidebaraction:hover{
 .text{
     font-size: 20px;
     background: linear-gradient(to bottom right, cyan,orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+    margin:0;
+    padding:0;
+}
+
+.pgwrapper2 .text{
+    font-size: 20px;
+    background: linear-gradient(to bottom right, darkblue,darkred);
     -webkit-background-clip: text;
     background-clip: text;
     color:transparent;
@@ -354,12 +372,34 @@ button.sidebaraction:hover{
     transform: rotate(-8deg);
 }
 
-.inactive{
+.pgwrapper.inactive{
     transform: translateX(-100vw);
+    transition-duration: 0.3s;
+    display:none;
+}
+
+.pgwrapper2.inactive{
+    transform: translateX(-100vw);
+    transition-duration: 0.3s;
+}
+
+.pgwrapper.active{
+    transform: translateX(0);
+    transition-duration: 0.3s;
+}
+
+.pgwrapper2.active{
+    transform: translateX(0);
+    transition-duration: 0.3s;
+    display:none;
 }
 
 
 @media(max-width:786px){
+
+    body{
+        width:100vw;
+    }
     .pgwrapper{
         display:block;
         position:relative;

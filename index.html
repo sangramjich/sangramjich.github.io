@@ -17,7 +17,7 @@
                 <div class="sidebarbg"></div>
                 <div class="btn-na sidebarwrapper" id="sidebarwrapper">
                     <button class="btn-na sidebarbtn" data-toggle="collapse" data-target="#collapser">
-                        <p class="text">Information</p><i class="fa fa-ellipsis-h fa-4x arrowicon"></i>
+                        <p class="sidebartext">Information</p><i class="fa fa-ellipsis-h fa-4x arrowicon"></i>
                     </button>
 
                     <div class="dropbar collapse" id="collapser">
@@ -37,7 +37,7 @@
 
         <div class="bothwrap">
 
-            <div class="pgwrapper" id="leftpage">
+            <div class="pgwrapper active" id="leftpage">
 
                 <div class="body">
                     <div class="container">
@@ -147,7 +147,7 @@
             </div>
 
 
-            <div class="pgwrapper2" id="rightpage">
+            <div class="pgwrapper2 active" id="rightpage">
                 <div class="body">
                     <div class="container">
                         <div class="row">
@@ -229,6 +229,8 @@
                 $("#changepage").on('click',function(){
                     $("#leftpage").toggleClass('inactive');
                     $('#rightpage').toggleClass('inactive');
+                    $("#leftpage").toggleClass('active');
+                    $('#rightpage').toggleClass('active');
                     $("#nxtbtnbg").toggleClass('changed');
                     $('#changepage').toggleClass('changed');
                     $('#sidebarwrapper').toggleClass('changed');
@@ -242,6 +244,8 @@
                     else{
                         $("#leftpage").toggleClass('inactive');
                         $('#rightpage').toggleClass('inactive');
+                        $("#leftpage").toggleClass('active');
+                        $('#rightpage').toggleClass('active');
                         $("#nxtbtnbg").toggleClass('changed');
                         $('#changepage').toggleClass('changed');
                         $('#sidebarwrapper').toggleClass('changed');
@@ -253,6 +257,8 @@
 
                         $("#leftpage").toggleClass('inactive');
                         $('#rightpage').toggleClass('inactive');
+                        $("#leftpage").toggleClass('active');
+                        $('#rightpage').toggleClass('active');
                         $("#nxtbtnbg").toggleClass('changed');
                         $('#changepage').toggleClass('changed');
                         $('#sidebarwrapper').toggleClass('changed');
